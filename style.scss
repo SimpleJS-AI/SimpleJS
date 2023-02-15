@@ -140,6 +140,7 @@ h1 {
   & h1:last-child {
     clip-path: circle(40% at 30px 140px);
     animation: loadingI ease 2.5s 0s forwards;
+    opacity: 0;
   }
 }
 
@@ -159,7 +160,11 @@ h1 {
 }
 
 @keyframes loadingI {
+  38% {
+    opacity: 0;
+  }
   40% {
+    opacity: 1;
     transform: scale(1) translateY(0);
   }
   50% {
@@ -169,6 +174,7 @@ h1 {
     transform: scale(.8, 1.1) translateY(-5%);
   }
   100% {
+    opacity: 1;
     transform: scale(1) translateY(0);
   }
 }
