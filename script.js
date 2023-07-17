@@ -27,13 +27,12 @@ function enableScroll(pos) {
 setColorPalette();
 
 function setColorPalette() {
-    fetch('https://flug8.github.io/SimpleJS/colors.json')
+    fetch('https://raw.githubusercontent.com/flug8/SimpleJS/master/colors.json')
         .then(response => response.json())
         .then(data => {
-            console.log(data);
-            /*data.forEach((color, i) => {
-                document.documentElement.style.setProperty(`--c${i}`, color);
-            });*/
+            Object.keys(data).forEach((key) => {
+                document.documentElement.style.setProperty(`--${key}`, data[key]);
+            })
         });
 }
 
