@@ -1,4 +1,25 @@
+// SUPPORTED BROWSERS: Chromium desktop and Chromium for Android
 
+// Check if the user agent is from a Chromium desktop browser
+function isChromiumDesktop() {
+    var userAgent = navigator.userAgent.toLowerCase();
+    return /chrome|edge|opera/.test(userAgent) && !/android/.test(userAgent);
+}
+
+// Check if the user agent is from Chromium for Android
+function isChromiumAndroid() {
+    var userAgent = navigator.userAgent.toLowerCase();
+    return /chrome/.test(userAgent) && /android/.test(userAgent);
+}
+
+// Redirect or display a message to unsupported browsers
+if (!isChromiumDesktop() && !isChromiumAndroid()) {
+    // Redirect to an unsupported browser page
+    // window.location.href = "unsupported.html";
+
+    // Or display a message
+    document.body.innerHTML = "<h1>Unsupported Browser</h1><p>This website only supports Chromium desktop and Chromium for Android.</p>";
+}
 
 // Split title into letters (used for animation)
 
