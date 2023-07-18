@@ -36,6 +36,28 @@ function setColorPalette() {
         });
 }
 
-setTimeout(() => {
-    window.parent.postMessage(window.getComputedStyle(document.documentElement).getPropertyValue('--c1'), '*');
-}, 2000);
+// ANIMATION V2
+function animationSetup() {
+    let e1 = document.getElementById("svgText");
+    let e2 = document.getElementById("svgDot");
+    let l = document.getElementById("loadingAnimation");
+    let t = document.getElementById("title");
+    e1.addEventListener("animationiteration", function () {
+        e1.classList.remove("start");
+        e2.classList.remove("start");
+        e1.classList.add("end");
+        e2.classList.add("end");
+        setTimeout(function () {
+            l.style.width = "clamp(200px, 60%, 1000px";
+        }, 1500);
+        setTimeout(function () {
+            t.classList.add("active");
+        }, 5500);
+    });
+}
+a = new Date();
+
+
+document.addEventListener("readystatechange", function () {
+    if(document.readyState === "complete") animationSetup();
+});

@@ -26,11 +26,25 @@ body::-webkit-scrollbar {
 @font-face {
   font-family: "jumble";
   src: url("assets/fonts/Jumble-Regular.woff") format("woff");
-  font-style: normal;
+}
+@font-face {
+  font-family: "Google Sans";
+  src: url("assets/fonts/GoogleSans.woff2") format("woff2");
+  font-weight: 475;
+}
+@font-face {
+  font-family: "Google Sans Text";
+  src: url("assets/fonts/GoogleSansText.woff2") format("woff2");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Google Sans Text";
+  src: url("assets/fonts/GoogleSansTextMedium.woff2") format("woff2");
+  font-weight: bold;
 }
 h1 {
-  font-family: "jumble", sans-serif;
-  font-weight: 400;
+  font-family: "Google Sans", sans-serif;
+  font-weight: normal;
   font-size: 140px;
   color: black;
 }
@@ -40,7 +54,15 @@ h1 {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  animation: showContent ease-out 1s 4.6s forwards;
+}
+#title #loadingAnimation {
+  width: clamp(200px, 30%, 500px);
+  transition: width 2s ease;
+  position: absolute;
+}
+
+#title.active {
+  animation: showContent ease-out 1s forwards;
 }
 
 @keyframes showContent {

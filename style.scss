@@ -1,219 +1,244 @@
 
 body {
-  background-color: var(--c1);
-  margin: 0;
-  overflow: hidden;
-  -ms-overflow-style: none; //hide Scrollbar for IE and Edge
-  scrollbar-width: none; //hide Scrollbar for Firefox
+    background-color: var(--c1);
+    margin: 0;
+    overflow: hidden;
+    -ms-overflow-style: none; //hide Scrollbar for IE and Edge
+    scrollbar-width: none; //hide Scrollbar for Firefox
 }
 
 body::-webkit-scrollbar {
-  display: none; // hide Scrollbar for Chrome,...
+    display: none; // hide Scrollbar for Chrome,...
 }
 
 :root {
-  --c1: #046886;
-  --c2: #008A9A;
-  --c3: #00AB9E;
-  --c4: #50CA91;
-  --c5: #A2E47E;
-  --c6: #F9F871;
+    --c1: #046886;
+    --c2: #008A9A;
+    --c3: #00AB9E;
+    --c4: #50CA91;
+    --c5: #A2E47E;
+    --c6: #F9F871;
 }
 
 * {
-  transition: all 1.5s ease;
+    transition: all 1.5s ease;
 }
 
 @font-face {
-  font-family: "jumble";
-  src: url('assets/fonts/Jumble-Regular.woff') format("woff");
-  font-style: normal;
+    font-family: "jumble";
+    src: url('assets/fonts/Jumble-Regular.woff') format("woff");
+}
+
+@font-face {
+    font-family: "Google Sans";
+    src: url('assets/fonts/GoogleSans.woff2') format("woff2");
+    font-weight: 475;
+}
+
+@font-face {
+    font-family: "Google Sans Text";
+    src: url('assets/fonts/GoogleSansText.woff2') format("woff2");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Google Sans Text";
+    src: url('assets/fonts/GoogleSansTextMedium.woff2') format("woff2");
+    font-weight: bold;
 }
 
 h1 {
-  font-family: "jumble", sans-serif;
-  font-weight: 400;
-  font-size: 140px;
-  color: black;
+    font-family: "Google Sans", sans-serif;
+    font-weight: normal;
+    font-size: 140px;
+    color: black;
 }
 
 // TITLE
 
 #title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  animation: showContent ease-out 1s 4.6s forwards;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    & #loadingAnimation {
+        width: clamp(200px, 30%, 500px);
+        transition: width 2s ease;
+        position: absolute;
+    }
+}
+#title.active {
+    animation: showContent ease-out 1s forwards;
 }
 
 @keyframes showContent {
-  100% {
-    height: 85vh;
-  }
+    100% {
+        height: 85vh;
+    }
 }
 
 #title > div {
-  position: absolute;
-  display: flex;
+    position: absolute;
+    display: flex;
 }
 
 
 #title > div:nth-child(1) * {
-  color: var(--c2);
+    color: var(--c2);
 }
 
 #title > div:nth-child(2) h1 {
-  color: var(--c3);
-  clip-path: circle(0% at 97px 59px);
-  --size: 80%;
-  animation: titleCircleShow ease-out 3s 3.6s forwards;
+    color: var(--c3);
+    clip-path: circle(0% at 97px 59px);
+    --size: 80%;
+    animation: titleCircleShow ease-out 3s 3.6s forwards;
 }
 
 #title > div:nth-child(3) h1 {
-  color: var(--c4);
-  clip-path: circle(0% at 97px 59px);
-  --size: 50%;
-  animation: titleCircleShow ease-out 2.6s 4s forwards;
+    color: var(--c4);
+    clip-path: circle(0% at 97px 59px);
+    --size: 50%;
+    animation: titleCircleShow ease-out 2.6s 4s forwards;
 }
 
 #title > div:nth-child(4) h1 {
-  color: var(--c5);
-  clip-path: circle(0% at 97px 59px);
-  --size: 20%;
-  animation: titleCircleShow ease-out 2.2s 4.4s forwards;
+    color: var(--c5);
+    clip-path: circle(0% at 97px 59px);
+    --size: 20%;
+    animation: titleCircleShow ease-out 2.2s 4.4s forwards;
 }
 
 #title > div:nth-child(5) h1 {
-  color: var(--c6);
-  clip-path: circle(0% at 97px 59px);
-  --size: 4%;
-  animation: titleCircleShow ease-out .2s 3.4s forwards;
+    color: var(--c6);
+    clip-path: circle(0% at 97px 59px);
+    --size: 4%;
+    animation: titleCircleShow ease-out .2s 3.4s forwards;
 }
 
 @keyframes titleCircleShow {
-  0% {
-    clip-path: circle(0% at 97px 59px);
-  }
-  100% {
-    clip-path: circle(var(--size) at 97px 59px);
-  }
+    0% {
+        clip-path: circle(0% at 97px 59px);
+    }
+    100% {
+        clip-path: circle(var(--size) at 97px 59px);
+    }
 }
 
 
 #title > div:first-child > h1 {
-  transition: width 1s ease;
-  width: 0;
-  animation: showW 0s 2s forwards;
+    transition: width 1s ease;
+    width: 0;
+    animation: showW 0s 2s forwards;
 }
 
 @keyframes showW {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: auto;
-  }
+    0% {
+        width: 0;
+    }
+    100% {
+        width: auto;
+    }
 }
 
 #title > div:first-child .left span {
-  opacity: 0;
-  animation: showLetter ease .8s 2s forwards;
+    opacity: 0;
+    animation: showLetter ease .8s 2s forwards;
 }
 
 #title > div:first-child .right span {
-  opacity: 0;
+    opacity: 0;
 }
 
 @for $i from 1 through 6 {
-  #title > div:first-child .right span:nth-child(#{$i}) {
-    animation: showLetter ease calc(.7s + .1s * #{$i}) 2s forwards;
-  }
+    #title > div:first-child .right span:nth-child(#{$i}) {
+        animation: showLetter ease calc(.7s + .1s * #{$i}) 2s forwards;
+    }
 }
 
 @keyframes showLetter {
-  0% {
-    opacity: 0;
-    font-size: 10%;
-  }
-  50% {
-    opacity: 1;
-    font-size: 101%;
-  }
-  70% {
-    font-size: 90%;
-  }
-  100% {
-    opacity: 1;
-    font-size: 100%;
-  }
+    0% {
+        opacity: 0;
+        font-size: 10%;
+    }
+    50% {
+        opacity: 1;
+        font-size: 101%;
+    }
+    70% {
+        font-size: 90%;
+    }
+    100% {
+        opacity: 1;
+        font-size: 100%;
+    }
 }
 
 #title > div:first-child div {
-  color: var(--c2);
-  display: flex;
+    color: var(--c2);
+    display: flex;
 
-  & h1:first-child {
-    clip-path: circle(20% at 20px 48px);
-    position: absolute;
-    color: var(--c5);
-    animation: loadingCircle ease 2.5s 0s forwards;
-  }
+    & h1:first-child {
+        clip-path: circle(20% at 20px 48px);
+        position: absolute;
+        color: var(--c5);
+        animation: loadingCircle ease 2.5s 0s forwards;
+    }
 
-  & h1:last-child {
-    clip-path: circle(40% at 30px 140px);
-    animation: loadingI ease 2.5s 0s forwards;
-    opacity: 0;
-  }
+    & h1:last-child {
+        clip-path: circle(40% at 30px 140px);
+        animation: loadingI ease 2.5s 0s forwards;
+        opacity: 0;
+    }
 }
 
 @keyframes loadingCircle {
-  0% {
-    transform: translateY(-1000%);
-  }
-  50% {
-    transform: translateY(+10%);
-  }
-  70% {
-    transform: translateY(-10%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
+    0% {
+        transform: translateY(-1000%);
+    }
+    50% {
+        transform: translateY(+10%);
+    }
+    70% {
+        transform: translateY(-10%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
 }
 
 @keyframes loadingI {
-  38% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-  50% {
-    transform: scale(1.2, .6) translateY(15%);
-  }
-  70% {
-    transform: scale(.8, 1.1) translateY(-5%);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
+    38% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+    50% {
+        transform: scale(1.2, .6) translateY(15%);
+    }
+    70% {
+        transform: scale(.8, 1.1) translateY(-5%);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
 }
 
 // CONTENT
 
 #content {
-  background: var(--c2);
-  height: calc(100vh + 33px);
-  border-radius: 33px 33px 0 0;
+    background: var(--c2);
+    height: calc(100vh + 33px);
+    border-radius: 33px 33px 0 0;
 }
 
 #iframeGame {
-  border-radius: 33px 33px 0 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  margin: 33px 0 0 0;
+    border-radius: 33px 33px 0 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    margin: 33px 0 0 0;
 }

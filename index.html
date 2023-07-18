@@ -6,31 +6,170 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SimpleJS</title>
 <!--    <link rel="stylesheet" href="https://use.typekit.net/tkk2jfz.css">-->
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+
+
     <div id="title">
-        <div>
-            <h1 class="left"><span>S</span></h1>
-            <div>
-                <h1>i</h1>
-                <h1>i</h1>
-            </div>
-            <h1 class="right">mpleJS</h1>
-        </div>
-        <div>
-            <h1>SimpleJS</h1>
-        </div>
-        <div>
-            <h1>SimpleJS</h1>
-        </div>
-        <div>
-            <h1>SimpleJS</h1>
-        </div>
-        <div>
-            <h1>SimpleJS</h1>
-        </div>
+        <svg id="loadingAnimation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+             viewBox="0 0 300 300" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+            <style>
+                #svgText{
+                    animation: svgTextAnimation 3000ms linear infinite normal forwards;
+                    fill: var(--c2);
+                }
+                #svgText.end {
+                    animation: svgTextAnimationEnd 3500ms ease normal forwards;
+                }
+
+                #svgText tspan:not(:first-child) {
+                    opacity: 0;
+                }
+                #svgText.end tspan:not(:first-child) {
+                    transform: translate(500px);
+                    animation: appear 1000ms forwards;
+                }
+
+                #svgText.end tspan:nth-child(2) {animation-delay: 1200ms;}
+                #svgText.end tspan:nth-child(3) {animation-delay: 1400ms;}
+                #svgText.end tspan:nth-child(4) {animation-delay: 1600ms;}
+                #svgText.end tspan:nth-child(5) {animation-delay: 1800ms;}
+                #svgText.end tspan:nth-child(6) {animation-delay: 2100ms;}
+                #svgText.end tspan:nth-child(7) {animation-delay: 2500ms;}
+                #svgText.end tspan:nth-child(8) {animation-delay: 3000ms;}
+                @keyframes appear {
+                    from {
+                        opacity: 0;
+                        transform: translate(500px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translate(0);
+                    }
+                }
+
+                @keyframes svgTextAnimation {
+                    0% {
+                        transform: translate(122.24821px, 149.93345px)
+                    }
+                    10% {
+                        transform: translate(122.24821px, 149.93345px);
+                        /*animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1)*/
+                    }
+                    17.5% {
+                        transform: translate(87.24821px, 149.93345px);
+                        /*animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1)*/
+                    }
+                    27% {
+                        transform: translate(122.24821px, 149.93345px)
+                    }
+                    100% {
+                        transform: translate(122.24821px, 149.93345px)
+                    }
+                }
+
+                @keyframes svgTextAnimationEnd{
+                    50% {
+                        transform: translate(122.24821px, 149.93345px) scale(1,1);
+                    }
+                    100% {
+                        transform: translate(20.24821px, 149.93345px) scale(0.95,0.95);
+                    }
+                }
+
+                #svgDot {
+                    animation: svgDotAnimation 3000ms linear infinite normal forwards;
+                    fill: var(--c2);
+                }
+
+                #svgDot.end {
+                    animation: svgDotAnimationEnd 2000ms ease-out normal forwards;
+                }
+
+                @keyframes svgDotAnimation {
+                    0% {
+                        offset-distance: 0;
+                    }
+                    10% {
+                        offset-distance: 9.642318%;
+                        /*animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1)*/
+                    }
+                    17.5% {
+                        offset-distance: 17.141898%;
+                        /*animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1)*/
+                    }
+                    25% {
+                        offset-distance: 24.641479%
+                    }
+                    33% {
+                        offset-distance: 34.283796%;
+                        animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1)
+                    }
+                    43% {
+                        offset-distance: 38.569271%;
+                        animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22)
+                    }
+                    52% {
+                        offset-distance: 42.854745%;
+                        animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715)
+                    }
+                    60% {
+                        offset-distance: 67.07751%
+                    }
+                    68.5% {
+                        offset-distance: 91.429051%;
+                        animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1)
+                    }
+                    84.5% {
+                        offset-distance: 95.714525%;
+                        animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22)
+                    }
+                    100% {
+                        offset-distance: 100%
+                    }
+                }
+
+                @keyframes svgDotAnimationEnd {
+                    0% {
+                        offset-distance: 91.429051%;
+                        animation-timing-function: cubic-bezier(.17,1.02,.46,1.01);
+                    }
+                    75% {
+                        offset-distance: 77%;
+                        transform: translate(-2%,0);
+                        opacity: 1;
+                    }
+                    80% {
+                        opacity: 0;
+                        transform: translate(-2%,0);
+                    }
+                    100% {
+                        offset-distance: 77%;
+                        opacity: 0;
+                    }
+                }
+            </style>
+            <g id="svgText" transform="translate(122.24821,149.93345)">
+                <text dx="0" dy="0" font-family="Google Sans" font-size="15" font-weight="700"
+                      transform="scale(5,5) translate(-4.449642,5.255175)" stroke-width="0">
+                    <tspan y="0" font-weight="700" stroke-width="0">S</tspan>
+                    <tspan y="0" dx="-3.5" font-weight="700" stroke-width="0">i</tspan>
+                    <tspan y="0" dx="-3.5" font-weight="700" stroke-width="0">m</tspan>
+                    <tspan y="0" dx="-3.5" font-weight="700" stroke-width="0">p</tspan>
+                    <tspan y="0" dx="-3.5" font-weight="700" stroke-width="0">l</tspan>
+                    <tspan y="0" dx="-3.5" font-weight="700" stroke-width="0">e</tspan>
+                    <tspan y="0" dx="-3.5" font-weight="700" stroke-width="0">J</tspan>
+                    <tspan y="0" dx="-3.5" font-weight="700" stroke-width="0">S</tspan>
+                </text>
+            </g>
+            <g id="svgDot"
+               style="offset-path:path('M194.451857,172.772961L149.451857,172.772961L114.451857,172.772961L149.451857,172.772961L194.451857,172.772961L214.451857,172.772961L194.451857,172.772961C244.017318,172.77185,244.017318,105,194.451857,104.45185C144.389513,105,144.389513,172.77185,194.451857,172.77185Q214.451857,172.77185,214.451857,172.77185Q194.451857,172.77185,194.451857,172.77185');offset-rotate:0deg">
+                <ellipse rx="8.42345" ry="8.423464" transform="scale(0.593581,0.59358) translate(0.92345,0.923464)"
+                         stroke-width="0"/>
+            </g>
+        </svg>
     </div>
     <div id="content">
         <iframe id="iFrameGame" src="https://flug8.github.io/SimpleJS-CarGame/" width="100%" height="100%"></iframe>
