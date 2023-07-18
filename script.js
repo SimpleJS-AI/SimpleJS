@@ -1,5 +1,5 @@
 // SUPPORTED BROWSERS: Chromium desktop and Chromium for Android
-
+window.scrollTo(0, 0);
 // Check if the user agent is from a Chromium desktop browser
 function isChromiumDesktop() {
     var userAgent = navigator.userAgent.toLowerCase();
