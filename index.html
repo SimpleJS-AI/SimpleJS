@@ -13,9 +13,19 @@
 
 
     <div id="title">
-        <img src="assets/img/1.png">
+        <div id="titleItems">
+            <div class="empty"></div>
+            <div class="filled">
+                <div id="titleText">
+                    <h2>SimpleJS is a simple JavaScript library for web projects.</h2>
+                </div>
+                <div id="titleButtons">
+                    <a href="" class="button">Button</a>
+                </div>
+            </div>
+        </div>
         <svg id="loadingAnimation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-             viewBox="-100 0 500 300" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" opacity="0">
+                                          viewBox="-100 0 500 300" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" opacity="0">
             <style>
                 #svgText{
                     animation: svgTextAnimation 3000ms linear infinite normal forwards;
@@ -171,6 +181,10 @@
                          stroke-width="0"/>
             </g>
         </svg>
+
+    </div>
+    <div class="content0">
+
     </div>
     <div id="content">
         <iframe id="iFrameGame" src="https://flug8.github.io/SimpleJS-CarGame/" width="100%" height="100%"></iframe>

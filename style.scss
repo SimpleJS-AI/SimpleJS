@@ -72,18 +72,62 @@ h1 {
     animation: simpleAppear 2s ease .5s forwards;
     background-color: var(--c3);
     overflow: hidden;
-    & img {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0;
-    }
+    flex-flow: column;
     & #loadingAnimation {
         opacity: 1;
         width: clamp(200px, 30%, 500px);
         transition: width 2s ease;
         position: absolute;
+    }
+    & #titleItems{
+        position: relative;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        background: url("assets/img/1.png");
+        background-size: cover;
+        opacity: 0;
+        transition: opacity 5s ease;
+        & .empty {
+            height: 100%;
+        }
+        & .filled{
+            width: 80%;
+            height: 50%;
+            & #titleText{
+                & h2 {
+                    font-family: "Google Sans Text", sans-serif;
+                    font-size: clamp(16px, 3vw, 24px);
+                    color: white;
+                    text-align: center;
+                    margin: 0;
+                }
+            }
+            & #titleButtons{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                & button {
+                    font-family: "Google Sans Text", sans-serif;
+                    font-size: clamp(16px, 3vw, 24px);
+                    color: white;
+                    background-color: var(--c4);
+                    border: none;
+                    border-radius: 8px;
+                    padding: 8px 16px;
+                    margin: 0 8px;
+                    cursor: pointer;
+                    transition: all .5s ease;
+                    &:hover {
+                        background-color: var(--c5);
+                        color: var(--c4);
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -97,166 +141,31 @@ h1 {
 }
 
 #title.active {
-    transition: 1.5s ease;
-    height: 50vh;
+    transition: 2s ease;
+    height: clamp(max(min(33vw,60vh), 300px), 50vh, min(60vh,66vw));
     border-radius: 24px;
     margin: 8px;
-    & img {
+    & #titleItems {
         opacity: 1;
+        & .empty {
+            height: 50%;
+        }
+    }
+    & #loadingAnimation {
+        transition: 1.5s ease;
+        width: clamp(200px, 90%, 680px) !important;
+        transform: translatey(-25%);
     }
 
 }
 
-#title > div {
-    position: absolute;
-    display: flex;
-}
 
-
-#title > div:nth-child(1) * {
-    color: var(--c2);
-}
-
-#title > div:nth-child(2) h1 {
-    color: var(--c3);
-    clip-path: circle(0% at 97px 59px);
-    --size: 80%;
-    animation: titleCircleShow ease-out 3s 3.6s forwards;
-}
-
-#title > div:nth-child(3) h1 {
-    color: var(--c4);
-    clip-path: circle(0% at 97px 59px);
-    --size: 50%;
-    animation: titleCircleShow ease-out 2.6s 4s forwards;
-}
-
-#title > div:nth-child(4) h1 {
-    color: var(--c5);
-    clip-path: circle(0% at 97px 59px);
-    --size: 20%;
-    animation: titleCircleShow ease-out 2.2s 4.4s forwards;
-}
-
-#title > div:nth-child(5) h1 {
-    color: var(--c6);
-    clip-path: circle(0% at 97px 59px);
-    --size: 4%;
-    animation: titleCircleShow ease-out .2s 3.4s forwards;
-}
-
-@keyframes titleCircleShow {
-    0% {
-        clip-path: circle(0% at 97px 59px);
-    }
-    100% {
-        clip-path: circle(var(--size) at 97px 59px);
-    }
-}
-
-
-#title > div:first-child > h1 {
-    transition: width 1s ease;
-    width: 0;
-    animation: showW 0s 2s forwards;
-}
-
-@keyframes showW {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: auto;
-    }
-}
-
-#title > div:first-child .left span {
-    opacity: 0;
-    animation: showLetter ease .8s 2s forwards;
-}
-
-#title > div:first-child .right span {
-    opacity: 0;
-}
-
-@for $i from 1 through 6 {
-    #title > div:first-child .right span:nth-child(#{$i}) {
-        animation: showLetter ease calc(.7s + .1s * #{$i}) 2s forwards;
-    }
-}
-
-@keyframes showLetter {
-    0% {
-        opacity: 0;
-        font-size: 10%;
-    }
-    50% {
-        opacity: 1;
-        font-size: 101%;
-    }
-    70% {
-        font-size: 90%;
-    }
-    100% {
-        opacity: 1;
-        font-size: 100%;
-    }
-}
-
-#title > div:first-child div {
-    color: var(--c2);
-    display: flex;
-
-    & h1:first-child {
-        clip-path: circle(20% at 20px 48px);
-        position: absolute;
-        color: var(--c5);
-        animation: loadingCircle ease 2.5s 0s forwards;
-    }
-
-    & h1:last-child {
-        clip-path: circle(40% at 30px 140px);
-        animation: loadingI ease 2.5s 0s forwards;
-        opacity: 0;
-    }
-}
-
-@keyframes loadingCircle {
-    0% {
-        transform: translateY(-1000%);
-    }
-    50% {
-        transform: translateY(+10%);
-    }
-    70% {
-        transform: translateY(-10%);
-    }
-    100% {
-        transform: translateY(0%);
-    }
-}
-
-@keyframes loadingI {
-    38% {
-        opacity: 0;
-    }
-    40% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-    50% {
-        transform: scale(1.2, .6) translateY(15%);
-    }
-    70% {
-        transform: scale(.8, 1.1) translateY(-5%);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-}
 
 // CONTENT
+
+.content0 {
+    height: 100vh;
+}
 
 #content {
     background: var(--c2);
