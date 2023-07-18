@@ -18,7 +18,7 @@ if (!isChromiumDesktop() && !isChromiumAndroid()) {
     // window.location.href = "unsupported.html";
 
     // Or display a message
-    document.body.innerHTML = "<h1>Unsupported Browser</h1><p>This website only supports Chromium desktop and Chromium for Android.</p>";
+    document.body.innerHTML = "<h1>Unsupported Browser</h1><p>This website currently only supports Chromium desktop and Chromium for Android/iOS.</p>";
 }
 
 // Split title into letters (used for animation)
