@@ -73,6 +73,7 @@ function animationSetup() {
                 l.style.width = "clamp(200px, 90%, 1000px";
             }, 1500);
             setTimeout(function () {
+                t.style.opacity = "1";
                 t.classList.add("active");
             }, 5500);
         });

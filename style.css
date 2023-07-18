@@ -63,11 +63,19 @@ h1 {
   align-items: center;
   height: 100vh;
   animation: simpleAppear 2s ease 0.5s forwards;
+  background-color: var(--c3);
+  overflow: hidden;
+}
+#title img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
 }
 #title #loadingAnimation {
   opacity: 1;
   width: clamp(200px, 30%, 500px);
-  aspect-ratio: 5/3;
   transition: width 2s ease;
   position: absolute;
 }
@@ -80,14 +88,16 @@ h1 {
     opacity: 1;
   }
 }
-/*#title.active {
-    animation: showContent ease-out 1s forwards;
-}*/
-@keyframes showContent {
-  100% {
-    height: 85vh;
-  }
+#title.active {
+  transition: 1.5s ease;
+  height: 50vh;
+  border-radius: 24px;
+  margin: 8px;
 }
+#title.active img {
+  opacity: 1;
+}
+
 #title > div {
   position: absolute;
   display: flex;
