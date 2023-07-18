@@ -12,12 +12,19 @@ body::-webkit-scrollbar {
 }
 
 :root {
-    --c1: #046886;
+    /*--c1: #046886;
     --c2: #008A9A;
     --c3: #00AB9E;
     --c4: #50CA91;
     --c5: #A2E47E;
-    --c6: #F9F871;
+    --c6: #F9F871;*/
+    --c1: #1f1f1f;
+    --c2: #a8c7fa;
+    --c3: #28292a;
+    --c4: #004a77;
+    --c5: #e3e3e3;
+    --c6: #7fcfff;
+    --c7: #c2e7ff;
 }
 
 * {
@@ -57,20 +64,33 @@ h1 {
 // TITLE
 
 #title {
+    opacity: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-
+    animation: simpleAppear 2s ease .5s forwards;
     & #loadingAnimation {
+        opacity: 1;
         width: clamp(200px, 30%, 500px);
+        aspect-ratio: 5/3;
         transition: width 2s ease;
         position: absolute;
     }
 }
-#title.active {
-    animation: showContent ease-out 1s forwards;
+
+@keyframes simpleAppear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
+
+/*#title.active {
+    animation: showContent ease-out 1s forwards;
+}*/
 
 @keyframes showContent {
     100% {

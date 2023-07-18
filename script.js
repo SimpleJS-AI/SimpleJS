@@ -45,7 +45,7 @@ function enableScroll(pos) {
     window.scrollTo(0, pos);
 }
 
-setColorPalette();
+//setColorPalette();
 
 function setColorPalette() {
     fetch('https://raw.githubusercontent.com/flug8/SimpleJS/master/colors.json')
@@ -63,21 +63,23 @@ function animationSetup() {
     let e2 = document.getElementById("svgDot");
     let l = document.getElementById("loadingAnimation");
     let t = document.getElementById("title");
-    e1.addEventListener("animationiteration", function () {
-        e1.classList.remove("start");
-        e2.classList.remove("start");
-        e1.classList.add("end");
-        e2.classList.add("end");
-        setTimeout(function () {
-            l.style.width = "clamp(200px, 60%, 1000px";
-        }, 1500);
-        setTimeout(function () {
-            t.classList.add("active");
-        }, 5500);
-    });
+    setTimeout(function () {
+        e1.addEventListener("animationiteration", function () {
+            e1.classList.remove("start");
+            e2.classList.remove("start");
+            e1.classList.add("end");
+            e2.classList.add("end");
+            setTimeout(function () {
+                l.style.width = "clamp(200px, 90%, 1000px";
+            }, 1500);
+            setTimeout(function () {
+                t.classList.add("active");
+            }, 5500);
+        });
+    }, 4000);
 }
-a = new Date();
 
+//document.getElementById("title").style.opacity = "1";
 
 document.addEventListener("readystatechange", function () {
     if(document.readyState === "complete") animationSetup();

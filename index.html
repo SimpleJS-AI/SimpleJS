@@ -14,7 +14,7 @@
 
     <div id="title">
         <svg id="loadingAnimation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-             viewBox="0 0 300 300" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+             viewBox="-100 0 500 300" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" opacity="0">
             <style>
                 #svgText{
                     animation: svgTextAnimation 3000ms linear infinite normal forwards;
@@ -137,16 +137,16 @@
                         animation-timing-function: cubic-bezier(.17,1.02,.46,1.01);
                     }
                     75% {
-                        offset-distance: 77%;
-                        transform: translate(-2%,0);
+                        offset-distance: 76.5%;
+                        transform: translate(-1.5%,0);
                         opacity: 1;
                     }
                     80% {
                         opacity: 0;
-                        transform: translate(-2%,0);
+                        transform: translate(-1.5%,0);
                     }
                     100% {
-                        offset-distance: 77%;
+                        offset-distance: 76.5%;
                         opacity: 0;
                     }
                 }
