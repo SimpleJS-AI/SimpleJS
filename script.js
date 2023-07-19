@@ -83,7 +83,6 @@ function animationSetup() {
                 document.querySelector(".imageContainer").style.opacity = "1";
             }, 1500);
             setTimeout(function () {
-                t.style.opacity = "1";
                 t.classList.add("active");
             }, 5500);
         });
