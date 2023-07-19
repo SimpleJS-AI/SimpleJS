@@ -91,6 +91,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 80%;
 }
 #title #titleText h2 {
   font-family: "Google Sans Text", sans-serif;
@@ -107,24 +108,8 @@ h1 {
   height: 0;
   opacity: 0;
 }
-#title #titleButtons button {
-  font-family: "Google Sans Text", sans-serif;
-  font-weight: bold;
-  font-size: clamp(16px, 3vw, 24px);
-  color: var(--c8);
-  background-color: var(--c2);
-  border: none;
-  border-radius: 40px;
-  cursor: pointer;
-  transition: all 0.5s 0s ease;
-  margin: 16px;
-  padding: 25px 50px;
-}
-#title #titleButtons button:hover {
-  background-color: var(--c6);
-  border-radius: 24px;
-}
 #title .imageContainer {
+  top: 0;
   opacity: 0;
   position: absolute;
   height: 100%;
@@ -146,9 +131,12 @@ h1 {
 }
 #title.active {
   transition: 2s ease;
-  height: clamp(max(min(33vw, 60vh), 300px), 50vh, min(60vh, 66vw));
+  /*height: clamp(max(min(33vw,60vh), 300px), 50vh, min(60vh,66vw));*/
+  height: auto;
   border-radius: 24px;
   margin: 8px;
+  padding-top: 40px;
+  padding-bottom: 20px;
 }
 #title.active #titleText {
   height: auto;
@@ -170,7 +158,6 @@ h1 {
 }
 #title.active .animationContainer #loadingAnimation #svgText {
   fill: var(--c5);
-  transition: 1.5s ease;
 }
 
 .content0 {
@@ -189,6 +176,24 @@ h1 {
   height: 100%;
   border: none;
   margin: 33px 0 0 0;
+}
+
+.mainButton {
+  font-family: "Google Sans Text", sans-serif;
+  font-weight: bold;
+  font-size: clamp(16px, 3vw, 24px);
+  color: var(--c8);
+  background-color: var(--c2);
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.5s 0s ease;
+  margin: 20px;
+  padding: clamp(16px, 3.125vw, 25px) clamp(32px, 6.25vw, 50px);
+}
+.mainButton:hover {
+  background-color: var(--c6);
+  border-radius: 24px;
 }
 
 /*# sourceMappingURL=style.css.map */

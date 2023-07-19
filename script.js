@@ -13,12 +13,20 @@ function isChromiumAndroid() {
 }
 
 // Redirect or display a message to unsupported browsers
-if (!isChromiumDesktop() && !isChromiumAndroid()) {
+if (!isChromiumDesktop() && !isChromiumAndroid() && !window.location.href.includes("?bypass")) {
     // Redirect to an unsupported browser page
     // window.location.href = "unsupported.html";
 
     // Or display a message
-    document.body.innerHTML = "<h1>Unsupported Browser</h1><p>This website currently only supports Chromium desktop and Chromium for Android/iOS.</p>";
+    document.body.innerHTML = "" +
+        "<h1 style='margin: 15% 15% 20px 15%;font-size: clamp(32px, 6vw, 48px); color: var(--c5); text-align: center;'>Unsupported<br>Browser</h1>" +
+        "<p style='margin: 20px 15% 20px 15%; font-family: Google Sans Text; font-size: clamp(16px, 3vw, 24px); color: var(--c5); text-align: center'>This website currently only supports Chromium desktop and Chromium for Android/iOS. <br><br> Against recommendation, this website can still be visited with this browser, but a good user experience is NOT guaranteed</p>" +
+        "<button style='margin: 20px auto 15% auto' class='mainButton' onclick='bypass()'>Still visit</button>" +
+        "<style>body{height: 100%; width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;}</style>";
+}
+
+function bypass() {
+    window.location.href += "?bypass";
 }
 
 // Split title into letters (used for animation)
