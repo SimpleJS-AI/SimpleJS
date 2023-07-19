@@ -24,6 +24,7 @@ body::-webkit-scrollbar {
   --c5: #e3e3e3;
   --c6: #7fcfff;
   --c7: #c2e7ff;
+  --c8: #062e6f;
 }
 
 * {
@@ -66,60 +67,73 @@ h1 {
   background-color: var(--c3);
   overflow: hidden;
   flex-flow: column;
+  position: relative;
 }
-#title #loadingAnimation {
+#title .animationContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 33%;
+  margin-top: 33vh;
+}
+#title .animationContainer #loadingAnimation {
   opacity: 1;
   width: clamp(200px, 30%, 500px);
   transition: width 2s ease;
-  position: absolute;
-}
-#title #titleItems {
   position: relative;
+}
+#title #titleText {
+  position: relative;
+  height: 33%;
+  opacity: 0;
   display: flex;
-  flex-flow: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100%;
-  background: url("assets/img/1.png");
-  background-size: cover;
-  opacity: 0;
-  transition: opacity 5s ease;
 }
-#title #titleItems .empty {
-  height: 100%;
-}
-#title #titleItems .filled {
-  width: 80%;
-  height: 50%;
-}
-#title #titleItems .filled #titleText h2 {
+#title #titleText h2 {
   font-family: "Google Sans Text", sans-serif;
   font-size: clamp(16px, 3vw, 24px);
-  color: white;
+  color: var(--c5);
   text-align: center;
   margin: 0;
 }
-#title #titleItems .filled #titleButtons {
+#title #titleButtons {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  height: 0;
+  opacity: 0;
 }
-#title #titleItems .filled #titleButtons button {
+#title #titleButtons button {
   font-family: "Google Sans Text", sans-serif;
+  font-weight: bold;
   font-size: clamp(16px, 3vw, 24px);
-  color: white;
-  background-color: var(--c4);
+  color: var(--c8);
+  background-color: var(--c2);
   border: none;
-  border-radius: 8px;
-  padding: 8px 16px;
-  margin: 0 8px;
+  border-radius: 40px;
   cursor: pointer;
-  transition: all 0.5s ease;
+  transition: all 0.5s 0s ease;
+  margin: 16px;
+  padding: 25px 50px;
 }
-#title #titleItems .filled #titleButtons button:hover {
-  background-color: var(--c5);
-  color: var(--c4);
+#title #titleButtons button:hover {
+  background-color: var(--c6);
+  border-radius: 24px;
+}
+#title .imageContainer {
+  opacity: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+#title .imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @keyframes simpleAppear {
@@ -136,16 +150,27 @@ h1 {
   border-radius: 24px;
   margin: 8px;
 }
-#title.active #titleItems {
+#title.active #titleText {
+  height: auto;
+}
+#title.active #titleButtons {
+  height: auto;
+  transition: opacity 1s 1.5s ease;
   opacity: 1;
 }
-#title.active #titleItems .empty {
-  height: 50%;
+#title.active .animationContainer {
+  transition: 1.5s ease;
+  height: auto;
+  align-items: flex-end;
+  margin-top: 0;
 }
-#title.active #loadingAnimation {
+#title.active .animationContainer #loadingAnimation {
   transition: 1.5s ease;
   width: clamp(200px, 90%, 680px) !important;
-  transform: translatey(-25%);
+}
+#title.active .animationContainer #loadingAnimation #svgText {
+  fill: var(--c5);
+  transition: 1.5s ease;
 }
 
 .content0 {

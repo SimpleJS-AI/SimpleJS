@@ -71,7 +71,8 @@ function animationSetup() {
             e2.classList.add("end");
             setTimeout(function () {
                 l.style.width = "clamp(200px, 90%, 1000px";
-                document.getElementById("titleItems").style.opacity = "1";
+                document.getElementById("titleText").style.opacity = "1";
+                document.querySelector(".imageContainer").style.opacity = "1";
             }, 1500);
             setTimeout(function () {
                 t.style.opacity = "1";
