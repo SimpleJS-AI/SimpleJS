@@ -47,7 +47,7 @@ disableScroll();
 function disableScroll() {
     document.body.style.overflow = 'hidden';
 }
-setTimeout(enableScroll, startAnimationLength, 0);
+//setTimeout(enableScroll, startAnimationLength, 0);
 function enableScroll(pos) {
     document.body.style.overflow = 'auto';
     window.scrollTo(0, pos);
@@ -84,6 +84,7 @@ function animationSetup() {
             }, 1500);
             setTimeout(function () {
                 t.classList.add("active");
+                enableScroll(0);
             }, 5500);
         });
     }, 4000);
