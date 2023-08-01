@@ -151,8 +151,8 @@ h1 {
     /*height: clamp(max(min(33vw,60vh), 300px), 50vh, min(60vh,66vw));*/
     border-radius: 24px;
     margin: 8px;
-    padding-top: 40px;
-    padding-bottom: 20px;
+    padding-top: 100px;
+    padding-bottom: 80px;
     max-height: fit-content;
     height: max-content;
     min-height: 0;
@@ -193,11 +193,32 @@ h1 {
 
 // CONTENT
 
-.content0 {
-    height: 100vh;
+.content {
+    display: flex;
+    height: 200vh;
+    margin-top: 100px;
+    & .left {
+        width: 50%;
+        height: 100%;
+    }
+    & .right {
+        width: 50%;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+
+        & div {
+            background-color: var(--c3);
+            position: absolute;
+            margin: 8px;
+            border-radius: 24px;
+            width: calc(100% - 16px);
+            height: calc(100% - 16px);
+        }
+    }
 }
 
-#content {
+#content1 {
     background: var(--c2);
     height: calc(100vh + 33px);
     border-radius: 33px 33px 0 0;
