@@ -1,0 +1,7 @@
+<!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 3">
+  <path d="M 0 1 C 1 1 1 2 2 2 C 3 2 3 1 4 1" stroke="#ff0000" stroke-width="0.1" fill="none"/>
+</svg>-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="1.5 0 152 9" stroke="red" fill="none">
+  <path d="M1.5 4.5c5.067-4.667 10.133-4.667 15.2 0s10.133 4.667 15.2 0 10.133-4.667 15.2 0 10.133 4.667 15.2 0 10.133-4.667 15.2 0 10.133 4.667 15.2 0 10.133-4.667 15.2 0 10.133 4.667 15.2 0 10.133-4.667 15.2 0 10.133 4.667 15.2 0" stroke-width="1" stroke-linecap="square">
+  </path>
+</svg>
