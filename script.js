@@ -19,8 +19,8 @@ if (!isChromiumDesktop() && !isChromiumAndroid() && !window.location.href.includ
 
     // Or display a message
     document.body.innerHTML = "" +
-        "<h1 style='margin: 15% 15% 20px 15%;font-size: clamp(32px, 6vw, 48px); color: var(--c5); text-align: center;'>Unsupported<br>Browser</h1>" +
-        "<p style='margin: 20px 15% 20px 15%; font-family: Google Sans Text; font-size: clamp(16px, 3vw, 24px); color: var(--c5); text-align: center'>This website currently only supports Chromium desktop and Chromium for Android/iOS. <br><br> Against recommendation, this website can still be visited with this browser, but a good user experience is NOT guaranteed</p>" +
+        "<h1 style='margin: 15% 15% 20px 15%;font-size: clamp(32px, 6vw, 48px); color: var(--3); text-align: center;'>Unsupported<br>Browser</h1>" +
+        "<p style='margin: 20px 15% 20px 15%; font-family: Google Sans Text; font-size: clamp(16px, 3vw, 24px); color: var(--3); text-align: center'>This website currently only supports Chromium desktop and Chromium for Android/iOS. <br><br> Against recommendation, this website can still be visited with this browser, but a good user experience is NOT guaranteed</p>" +
         "<button style='margin: 20px auto 15% auto' class='mainButton' onclick='bypass()'>Still visit</button>" +
         "<style>body{height: 100%; width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;}</style>";
 }
@@ -96,6 +96,7 @@ function animationSetup() {
                 setTimeout(function () {
                     t.classList.add("active");
                     enableScroll(0);
+                    document.addEventListener("scroll", updateContent);
                 }, 5500);
             });
         }, 4000);
@@ -112,6 +113,7 @@ function animationSetup() {
                 document.querySelector(".imageContainer").style.opacity = "1";
                 t.classList.add("active");
                 enableScroll(0);
+                document.addEventListener("scroll", updateContent);
             });
         }, 1000);
     }
@@ -122,3 +124,29 @@ function animationSetup() {
 document.addEventListener("readystatechange", function () {
     if(document.readyState === "complete") animationSetup();
 });
+
+
+function updateContent() {
+    let count = document.querySelector(".content .left").childElementCount -1;
+    for(let i = count; i >= 1; i--) {
+        let top = document.querySelector(`.content .left .left-e:nth-child(${i}) > svg`).getBoundingClientRect().top;
+        if(top < window.innerHeight/2) {
+            let e = document.querySelectorAll('.content .right > div');
+            for(let j = 0; j < e.length; j++) {
+                e[j].classList.remove("active");
+            }
+            document.querySelector(`.content .right .e${i+1}`).classList.add("active");
+            console.log(i);
+            return;
+        }
+    }
+    let e = document.querySelectorAll('.content .right > div');
+    for(let j = 0; j < e.length; j++) {
+        e[j].classList.remove("active");
+    }
+    document.querySelector(`.content .right .e1`).classList.add("active");
+}
+
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+}
