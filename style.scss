@@ -272,6 +272,17 @@ h1 {
     }
 }
 
+@media (max-width: 750px){
+    .content {
+        & .left {
+            width: 100%;
+        }
+        & .right {
+            display: none;
+        }
+    }
+}
+
 // content color
 
 .content > div > div:nth-child(2) {
