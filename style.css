@@ -241,14 +241,20 @@ h1 {
   border-radius: 24px;
   width: calc(100% - 16px);
   height: calc(100% - 16px);
+  overflow: hidden;
 }
 .content .right div.active {
   transition-delay: 0s;
   opacity: 1;
   pointer-events: all;
 }
+.content .right .e2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-@media (max-width: 750px) {
+@media (max-width: 919px) {
   .content .left {
     width: 100%;
   }
