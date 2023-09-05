@@ -281,6 +281,11 @@ h1 {
             display: flex;
             justify-content: center;
             align-items: center;
+            & iframe {
+                flex: 1;
+                aspect-ratio: 1;
+                max-height: 100%;
+            }
         }
     }
 }
