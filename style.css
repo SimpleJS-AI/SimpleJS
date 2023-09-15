@@ -265,10 +265,10 @@ h1 {
   aspect-ratio: 1;
   max-height: 100%;
 }
-.content .right .e4 {
+.content .right .e3, .content .right .e4 {
   overflow: hidden;
 }
-.content .right .e4 iframe {
+.content .right .e3 iframe, .content .right .e4 iframe {
   width: 100%;
   height: 100%;
 }
