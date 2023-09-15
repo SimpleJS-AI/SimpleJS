@@ -150,3 +150,24 @@ function updateContent() {
 window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 }
+
+
+// infobox for right content
+
+document.addEventListener("DOMContentLoaded", updateInfoBox);
+window.addEventListener("resize", updateInfoBox);
+window.addEventListener("scroll", updateInfoBox);
+
+function updateInfoBox() {
+    const infoBox = document.querySelectorAll(".infoBox");
+    const infoButton = document.querySelectorAll(".infoButton.variable");
+    for (let i = 0; i < infoBox.length; i++) {
+        if(window.innerHeight <= infoBox[i].getBoundingClientRect().bottom - 1) {
+            infoButton[i].classList.add("active");
+            infoBox[i].classList.add("inactive");
+        } else {
+            infoButton[i].classList.remove("active");
+            infoBox[i].classList.remove("inactive");
+        }
+    }
+}

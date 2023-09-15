@@ -252,16 +252,20 @@ h1 {
                 stroke: var(--a1);
             }
         }
+        & > div:last-child{
+            margin-bottom: 150px;
+        }
     }
     & .right {
+        transition: height 0s;
         width: 50%;
         position: sticky;
         top: 0;
         height: 100vh;
         height: 100dvh;
 
-        & div {
-            transition: opacity .4s ease .2s;
+        & > div {
+            transition: opacity .4s ease .2s, height 0s;
             opacity: 0;
             pointer-events: none;
             background-color: var(--a1);
@@ -271,24 +275,59 @@ h1 {
             width: calc(100% - 16px);
             height: calc(100% - 16px);
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
             &.active{
                 transition-delay: 0s;
                 opacity: 1;
                 pointer-events: all;
             }
+            & .infoBox {
+                flex: 1 1 auto;
+                min-height: min-content;
+                &.inactive{
+                    opacity: 0;
+                }
+            }
+            & .infoButton{
+                transition: transform .2s ease;
+                display: none;
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                margin: 8px;
+                bottom: 0;
+                right: 0;
+                border: 5px solid var(--a2);
+                box-sizing: border-box;
+                border-radius: 12px;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                &:hover{
+                    transform: scale(1.05);
+                }
+                &.active{
+                    display: flex;
+                }
+
+            }
         }
         & .e2 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
             & iframe {
-                flex: 1;
+                width: 100%;
                 aspect-ratio: 1;
                 max-height: 100%;
             }
         }
-        & .e3, & .e4{
-            overflow: hidden;
+        & .e3{
+            & iframe{
+                width: 100%;
+                aspect-ratio: 1;
+                height: 426px;
+            }
+        }
+        & .e4{
             & iframe{
                 width: 100%;
                 height: 100%;
