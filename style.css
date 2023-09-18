@@ -227,6 +227,7 @@ h1 {
   font-size: 16px;
 }
 .content .left .left-e > svg {
+  transition: stroke 0.2s ease;
   margin: 100px 0;
   grid-column: 1;
   grid-row: 2;

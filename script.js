@@ -136,7 +136,12 @@ function updateContent() {
                 e[j].classList.remove("active");
             }
             document.querySelector(`.content .right .e${i+1}`).classList.add("active");
-            console.log(i);
+            let color = window.getComputedStyle(document.querySelector(`.content .right .active`), null).getPropertyValue("background-color");
+            console.log(color)
+            let separators = document.querySelectorAll(".e-separator");
+            for(let j = 0; j < separators.length; j++) {
+                separators[j].style.stroke = color;
+            }
             return;
         }
     }
@@ -145,6 +150,12 @@ function updateContent() {
         e[j].classList.remove("active");
     }
     document.querySelector(`.content .right .e1`).classList.add("active");
+    let color = window.getComputedStyle(document.querySelector(`.content .right .active`), null).getPropertyValue("background-color");
+    console.log(color)
+    let separators = document.querySelectorAll(".e-separator");
+    for(let j = 0; j < separators.length; j++) {
+        separators[j].style.stroke = color;
+    }
 }
 
 window.onbeforeunload = function () {

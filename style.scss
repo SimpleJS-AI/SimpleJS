@@ -247,6 +247,7 @@ h1 {
                 }
             }
             & > svg {
+                transition: stroke .2s ease;
                 margin: 100px 0;
                 grid-column: 1;
                 grid-row: 2;
