@@ -125,6 +125,7 @@ document.addEventListener("readystatechange", function () {
     if(document.readyState === "complete") animationSetup();
 });
 
+let activeRight = 0;
 
 function updateContent() {
     let count = document.querySelector(".content .left").childElementCount -1;
@@ -141,6 +142,21 @@ function updateContent() {
             for(let j = 0; j < separators.length; j++) {
                 separators[j].style.stroke = color;
             }
+            console.log("updated content")
+            let iframes = document.querySelectorAll(".content .right :not(.active) iframe:not(.no-reload)");
+            if(i !== activeRight) {
+                let i2 = i;
+                setTimeout(function () {
+                    if (i2 === activeRight) {
+                        for (let j = 0; j < iframes.length; j++) {
+                            iframes[j].src = iframes[j].src;
+                            console.log("reloaded iframe");
+                        }
+                    }
+                }, 1000);
+            }
+            activeRight = i;
+
             return;
         }
     }
