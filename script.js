@@ -173,6 +173,8 @@ function updateContent() {
 }
 
 window.onbeforeunload = function () {
+    document.body.innerHTML = "";
+    document.documentElement.style.scrollBehavior = "auto";
     window.scrollTo(0, 0);
 }
 
