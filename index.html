@@ -193,7 +193,7 @@
             <h3>Lightweight Brilliance, Infinite Possibilities</h3>
         </div>
         <div id="titleButtons">
-            <button id="titleButton1" class="mainButton" onclick="window.scrollTo(0,document.querySelector('#title').getBoundingClientRect().height + 16);">Get Started</button>
+            <button id="titleButton1" class="mainButton" onclick="window.scrollTo(0,document.querySelector('#title').getBoundingClientRect().height + 16);updateContent();">Get Started</button>
         </div>
 
 
@@ -399,16 +399,16 @@
         </div>
         <div class="right">
             <div class="e1 active">
-                <iframe class="no-reload" src="https://simplejs-ai.github.io/SimpleJS-LogoNodes/" title="Logo Nodes" frameBorder="0" scrolling="no">
+                <iframe class="no-reload" src="https://simplejs-ai.github.io/SimpleJS-LogoNodes/" data-src="https://simplejs-ai.github.io/SimpleJS-LogoNodes/" title="Logo Nodes" frameBorder="0" scrolling="no">
                 </iframe>
             </div>
             <div class="e2">
-                <iframe src="https://simplejs-ai.github.io/SimpleJS-NNVisualization/"
+                <iframe src="https://simplejs-ai.github.io/SimpleJS-NNVisualization/" data-src="https://simplejs-ai.github.io/SimpleJS-NNVisualization/"
                         title="Neural Network Visualization" frameBorder="0" scrolling="no">
                 </iframe>
             </div>
             <div class="e3">
-                <iframe src="https://simplejs-ai.github.io/SimpleJS-BPExample/" title="Backpropagation Example" frameBorder="0" scrolling="no">
+                <iframe src="https://simplejs-ai.github.io/SimpleJS-BPExample/" data-src="https://simplejs-ai.github.io/SimpleJS-BPExample/" title="Backpropagation Example" frameBorder="0" scrolling="no">
                 </iframe>
                 <div class="infoBox">
                     <h3>Here comes the explanation of the interactive example</h3>
@@ -420,7 +420,7 @@
                 </div>
             </div>
             <div class="e4">
-                <iframe src="https://simplejs-ai.github.io/SimpleJS-FlappyBird/" title="Flappy Bird Example" frameBorder="0" scrolling="no">
+                <iframe src="https://simplejs-ai.github.io/SimpleJS-FlappyBird/" data-src="https://simplejs-ai.github.io/SimpleJS-FlappyBird/" title="Flappy Bird Example" frameBorder="0" scrolling="no">
                 </iframe>
                 <div class="infoBox">
                     <h3>Here comes the explanation of the interactive example</h3>
@@ -432,7 +432,7 @@
                 </div>
             </div>
             <div class="e5">
-                <iframe src="https://simplejs-ai.github.io/SimpleJS-CarGame/" title="Car Game Example" frameBorder="0" scrolling="no">
+                <iframe src="https://simplejs-ai.github.io/SimpleJS-CarGame/" data-src="https://simplejs-ai.github.io/SimpleJS-CarGame/" title="Car Game Example" frameBorder="0" scrolling="no">
                 </iframe>
                 <!--<div class="infoButton active">
                     <span class="material-symbols-rounded">info_i</span>

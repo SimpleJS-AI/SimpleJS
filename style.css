@@ -251,7 +251,7 @@ h1 {
   height: 100dvh;
 }
 .content .right > div {
-  transition: opacity 0.4s ease 0.2s, height 0s;
+  transition: opacity 0.4s ease 0.5s, height 0s;
   opacity: 0;
   pointer-events: none;
   background-color: var(--a1);
@@ -265,7 +265,7 @@ h1 {
   flex-direction: column;
 }
 .content .right > div.active {
-  transition-delay: 0s;
+  transition-delay: 0.3s;
   opacity: 1;
   pointer-events: all;
 }

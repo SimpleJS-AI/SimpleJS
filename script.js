@@ -112,7 +112,7 @@ document.addEventListener("readystatechange", function () {
     if(document.readyState === "complete") animationSetup();
 });
 
-let activeRight = 0;
+let activeRight = -1;
 
 function updateContent() {
     let count = document.querySelector(".content .left").childElementCount -1;
@@ -120,29 +120,31 @@ function updateContent() {
         let top = document.querySelector(`.content .left .left-e:nth-child(${i}) > svg`).getBoundingClientRect().top;
         if(top < window.innerHeight/2) {
             let e = document.querySelectorAll('.content .right > div');
-            for(let j = 0; j < e.length; j++) {
+            for (let j = 0; j < e.length; j++) {
                 e[j].classList.remove("active");
             }
-            document.querySelector(`.content .right .e${i+1}`).classList.add("active");
+            document.querySelector(`.content .right .e${i + 1}`).classList.add("active");
             let color = window.getComputedStyle(document.querySelector(`.content .right .active`), null).getPropertyValue("background-color");
             let separators = document.querySelectorAll(".e-separator");
-            for(let j = 0; j < separators.length; j++) {
+            for (let j = 0; j < separators.length; j++) {
                 separators[j].style.stroke = color;
             }
-            console.log("updated content")
             let iframes = document.querySelectorAll(".content .right :not(.active) iframe:not(.no-reload)");
-            if(i !== activeRight) {
+            if (i !== activeRight) {
                 let i2 = i;
                 setTimeout(function () {
                     if (i2 === activeRight) {
+                        let iframes = document.querySelectorAll(".content .right :not(.active) iframe");
                         for (let j = 0; j < iframes.length; j++) {
-                            iframes[j].src = iframes[j].src;
-                            console.log("reloaded iframe");
+                            iframes[j].src = "about:blank";
                         }
                     }
                 }, 1000);
+                console.log(i + " " + activeRight);
+                document.querySelector(`.content .right .active iframe`).src = document.querySelector(`.content .right .active iframe`).dataset.src;
             }
             activeRight = i;
+            console.log(activeRight)
 
             return;
         }
@@ -157,6 +159,19 @@ function updateContent() {
     for(let j = 0; j < separators.length; j++) {
         separators[j].style.stroke = color;
     }
+    if(activeRight !== 0){
+        document.querySelector(`.content .right .active iframe`).src = document.querySelector(`.content .right .active iframe`).dataset.src;
+        let i2 = 0;
+        setTimeout(function () {
+            if (i2 === activeRight) {
+                let iframes = document.querySelectorAll(".content .right :not(.active) iframe");
+                for (let j = 0; j < iframes.length; j++) {
+                    iframes[j].src = "about:blank";
+                }
+            }
+        }, 1000);
+    }
+    activeRight = 0;
 }
 
 window.onbeforeunload = function () {
