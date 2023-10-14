@@ -200,3 +200,9 @@ function updateInfoBox() {
         }
     }
 }
+
+
+
+function loadProjectURL(url){
+    window.open("https://github.com/SimpleJS-AI/" + url, "_blank");
+}
