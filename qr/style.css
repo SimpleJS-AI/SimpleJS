@@ -38,25 +38,76 @@ button {
   font-family: "Google Sans";
   font-size: 16px;
   color: #e3e3e3;
+  display: grid;
+  grid-template-columns: 1fr 40px;
+  align-items: center;
 }
 button:hover {
   background-color: #004a77;
   cursor: pointer;
 }
+button:hover svg path {
+  fill: #a8c7fa;
+}
+button:hover div span {
+  color: #062e6f;
+}
 button:active {
   border: 1px solid #e3e3e3;
+}
+button div {
+  justify-self: center;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+button div svg {
+  grid-row: 1;
+  grid-column: 1;
+  width: 40px;
+  height: 40px;
+}
+button div svg path {
+  fill: #1f1f1f;
+}
+button div span {
+  text-align: center;
+  grid-row: 1;
+  grid-column: 1;
 }
 
 @media (hover: none) {
   button {
     transition: background-color 2s;
   }
+  button svg path {
+    transition: fill 2s;
+  }
+  button div span {
+    transition: color 2s;
+  }
   button:hover {
     background-color: #292929;
+  }
+  button:hover svg path {
+    fill: #1f1f1f;
+  }
+  button:hover div span {
+    color: #e3e3e3;
   }
   button:active {
     background-color: #004a77;
     transition: background-color 0.2s;
+  }
+  button:active svg path {
+    fill: #a8c7fa;
+    transition: fill 0.2s;
+  }
+  button:active div span {
+    color: #062e6f;
+    transition: color 0.2s;
   }
 }
 
