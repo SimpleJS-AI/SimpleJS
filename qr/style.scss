@@ -28,8 +28,9 @@ h1 {
     display: grid;
     justify-content: center;
     max-height: 80%;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 80px 80px 80px;
     row-gap: 8px;
+    max-width: 80%;
 }
 
 button{
