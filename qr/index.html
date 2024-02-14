@@ -12,29 +12,26 @@
 <body>
 <div id="content">
     <h1>Get to know SimpleJS</h1>
-    <button id="website">
+    <button id="website" onclick="run(0)">
         <span>Visit Website</span>
         <div class="badge">
             <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="mask"><path d="M.887 14.467C-2.845 5.875 5.875-2.845 14.467.887l1.42.617a10.323 10.323 0 0 0 8.225 0l1.42-.617c8.593-3.732 17.313 4.988 13.581 13.58l-.617 1.42a10.323 10.323 0 0 0 0 8.225l.617 1.42c3.732 8.593-4.989 17.313-13.58 13.581l-1.42-.617a10.323 10.323 0 0 0-8.225 0l-1.42.617C5.874 42.845-2.846 34.125.886 25.533l.617-1.42a10.323 10.323 0 0 0 0-8.225l-.617-1.42Z"></path></svg>
             <span class="material-symbols-rounded">arrow_outward</span>
         </div>
     </button>
-    <button id="github">
+    <button id="github" onclick="run(1)">
         <span>Explore the Code</span>
         <div class="badge">
             <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="mask"><path d="M.887 14.467C-2.845 5.875 5.875-2.845 14.467.887l1.42.617a10.323 10.323 0 0 0 8.225 0l1.42-.617c8.593-3.732 17.313 4.988 13.581 13.58l-.617 1.42a10.323 10.323 0 0 0 0 8.225l.617 1.42c3.732 8.593-4.989 17.313-13.58 13.581l-1.42-.617a10.323 10.323 0 0 0-8.225 0l-1.42.617C5.874 42.845-2.846 34.125.886 25.533l.617-1.42a10.323 10.323 0 0 0 0-8.225l-.617-1.42Z"></path></svg>
             <span class="material-symbols-rounded">arrow_outward</span>
         </div>
     </button>
-    <button id="library">
+    <button id="library" onclick="run(2)">
         <span>Use the Library</span>
         <div class="badge">
             <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="mask"><path d="M.887 14.467C-2.845 5.875 5.875-2.845 14.467.887l1.42.617a10.323 10.323 0 0 0 8.225 0l1.42-.617c8.593-3.732 17.313 4.988 13.581 13.58l-.617 1.42a10.323 10.323 0 0 0 0 8.225l.617 1.42c3.732 8.593-4.989 17.313-13.58 13.581l-1.42-.617a10.323 10.323 0 0 0-8.225 0l-1.42.617C5.874 42.845-2.846 34.125.886 25.533l.617-1.42a10.323 10.323 0 0 0 0-8.225l-.617-1.42Z"></path></svg>
             <span class="material-symbols-rounded">arrow_outward</span>
         </div>
-    </button>
-    <button popovertarget="popover">
-
     </button>
 </div>
 
@@ -42,9 +39,9 @@
     <!--warning about website not supported for mobile-->
     <div class="popover-content">
         <h2>Attention</h2>
-        <p>Unfortunately, this website is currently not supported for mobile devices. Most of the content will be disabled.</p>
+        <p>Unfortunately, the website you are trying to open does not support small Screens. The experience will be strongly limited...</p>
         <div class="buttons">
-            <button id="close" class="highlighted">Go back</button>
+            <button id="close" class="highlighted" popovertarget="popover" popovertargetaction="hide">Go back</button>
             <button id="visit">Continue</button>
         </div>
 </div>
