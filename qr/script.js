@@ -12,13 +12,13 @@ function run(id) {
     id = window.innerWidth <= 1280 && id === 0 ? 3 : id;
     switch (id) {
         case 0:
-            window.open("https://www.google.com", "_self");
+            window.open("https://simplejs.ai/", "_self");
             break;
         case 1:
-            window.open("https://www.google.com", "_self");
+            window.open("https://github.com/SimpleJS-AI", "_self");
             break;
         case 2:
-            window.open("https://www.google.com", "_self");
+            window.open("https://github.com/SimpleJS-AI/SimpleJS-lib", "_self");
             break;
         case 3:
             document.getElementById("popover").showPopover();
