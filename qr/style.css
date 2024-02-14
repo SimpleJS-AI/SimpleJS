@@ -4,6 +4,7 @@ body {
   padding: 0;
   background-color: #1f1f1f;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: height 0.2s ease;
@@ -109,6 +110,45 @@ button div span {
     color: #062e6f;
     transition: color 0.2s;
   }
+}
+#popover {
+  transition: all 10s ease;
+  opacity: 0;
+  background-color: #292929;
+  border: none;
+  border-radius: 24px;
+  max-width: 80%;
+  color: #e3e3e3;
+  font-family: "Google Sans";
+  aspect-ratio: 1/1;
+}
+#popover:popover-open {
+  opacity: 1;
+}
+#popover::backdrop {
+  backdrop-filter: brightness(0.8);
+}
+#popover .popover-content {
+  height: calc(100% - 16px);
+  max-width: 320px;
+  display: grid;
+  grid-template-rows: auto 1fr 50px;
+  text-align: center;
+  margin: 8px;
+}
+#popover .popover-content .buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 8px;
+  width: 100%;
+}
+#popover .popover-content .buttons button {
+  background-color: #1f1f1f;
+  justify-content: center;
+  grid-template-columns: 1fr;
+}
+#popover .popover-content .buttons button.highlighted {
+  background-color: #004a77;
 }
 
 /*# sourceMappingURL=style.css.map */

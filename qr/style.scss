@@ -5,6 +5,7 @@ body{
     padding: 0;
     background-color: #1f1f1f;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: height .2s ease;
@@ -115,6 +116,49 @@ button{
 
     }
 
+}
+
+#popover{
+    transition: all 10s ease;
+    opacity: 0; // to make popover invisible for unsupported browsers
+    background-color: #292929;
+    border: none;
+    border-radius: 24px;
+    max-width: 80%;
+    color: #e3e3e3;
+    font-family: "Google Sans";
+    aspect-ratio: 1/1;
+    &:popover-open{
+        opacity: 1;
+    }
+    &::backdrop{
+        backdrop-filter: brightness(0.8);
+    }
+
+    & .popover-content{
+        height: calc(100% - 16px);
+        max-width: 320px;
+        display: grid;
+        grid-template-rows: auto 1fr 50px;
+        text-align: center;
+        margin: 8px;
+
+
+        & .buttons{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 8px;
+            width: 100%;
+            & button {
+                background-color: #1f1f1f;
+                justify-content: center;
+                grid-template-columns: 1fr;
+                &.highlighted{
+                    background-color: #004a77;
+                }
+            }
+        }
+    }
 }
 
 
