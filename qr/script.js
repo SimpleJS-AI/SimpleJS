@@ -9,7 +9,7 @@ function setup() {
 }
 
 function run(id) {
-    id = window.innerWidth <= 1280 && id === 0 ? 3 : id;
+    id = window.innerWidth <= 1180 && id === 3 ? 3 : 0;
     switch (id) {
         case 0:
             window.open("https://simplejs.ai/", "_self");
