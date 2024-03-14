@@ -22,6 +22,13 @@ function run(id) {
             break;
         case 3:
             document.getElementById("popover").showPopover();
+            break;
+        case 4:
+            window.open("https://simplejs-ai.github.io/SimpleJS-BPExample/?qr=true", "_self");
+            break;
+        case 5:
+            window.open("https://simplejs-ai.github.io/SimpleJS-FlappyBird/?qr=true", "_self");
+
     }
 
 }
